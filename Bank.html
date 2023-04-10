@@ -1,0 +1,303 @@
+<html>
+<head>
+    <title>PROJECT</title>
+    <style>
+        body{
+            margin:60px;
+            border:15px double green;
+            padding:50px;
+            color:blue;
+            background-image:url('bank.jpg');
+            background-repeat:no-repeat;
+            background-position:top;
+            }
+        h1{
+          text-align:center;
+        }
+        h2{
+          text-align:center;
+        }
+        h3{
+          text-align:center;
+        }
+        button{
+          background-color:black;
+          color:yellow;
+        }
+
+        fieldset{
+          background-color:black;
+          color:yellow;
+        }
+        select{
+          background-color:black;
+          color:yellow;
+          position: relative;
+          left:400px;
+        }
+        img{
+          position:relative;
+          left:400px;
+          right:auto;
+          }
+         div{
+            border:1px solid blue;
+            padding-left:100px;
+            color:green;
+            width: 450px;
+            position: relative;
+            left:200px;
+            font-size:24px;
+            font-weight: bolder;
+          }
+      </style>
+</head>
+<body>
+      <h1>BANKING WEB</h1></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+       <p1>Welcome to HERI bank.Carry out the following operations</p1>
+        <ol>
+            <li>DEPOSIT</li>
+                <li>WITHDRAW</li>
+                <li>BALANCE ENQUIRY</li>
+               </ol>
+            <P2>The following are instructions to the user while perfoming the above operations</P2>
+            <h2>INSTRUCTIONS</h2>
+            <ol>
+              <li>Enter correctly your bank account as you registered with the bank.</li>
+              <li>Choose your operation correctly as per your requirements.</li>
+             </ol>
+             
+            <forms>
+              <fieldset>
+                <label>ACCOUNT NUMBER:
+                    <input type="number" name="account" id="account"></br>
+                </label>
+                </fieldset>
+              </forms></br>
+              <h3>SELECT OPERATION </h3>
+            <select id="book">
+              <option value="1">DEPOSIT</option>
+                <option value="2">WITHDRAW</option>
+                <option value="3">BALANCE ENQUIRY</option>
+                <option value="4">LOAN</option>
+             </select></br></br>
+            <button onclick="operate()">OK</button></br></br>
+            <div>              
+            <p3 id="bank"></p3>
+            </div>
+            <script>
+             function operate()
+             {
+                 var account=document.getElementById("account").value;
+                var choice=document.getElementById("book").value;
+                var name;
+                var amount=10000;
+                if(account==12341)
+                {
+                    name="MOSES  ODHIAMBO";
+                    amount=10000;
+                    if(choice==1)
+                    {
+                   var deposit=prompt("Enter amount to deposit");
+                   var total=parseInt(amount)+parseInt(deposit);
+                   document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+
+                   "  "+"Kshs."+amount+"<br>"+
+                   " Amount you deposited"+
+                  "  "+"Kshs."+deposit+ "<br>"+"Total after deposit:"+"  "+"Kshs."+total;
+                    }
+                   else if(choice==2)
+                 {
+                    amount=10000;
+                    withdraw=prompt("Enter amount to withdraw");
+                    var total=parseInt(amount)-parseInt(withdraw);
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+"  "+"Kshs."+amount+"<br>"+"Amount you withdrawn"+
+                   "  "+"Kshs."+withdraw+"<br>"+"Remaining after withdrawal"+"  "+"Kshs."+total;
+
+                 }
+                 else if(choice==3)
+                 {
+                    amount=10000;
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Your current balance is:"+"  "+"Kshs."+amount;
+                 }
+                 else if(choice==4)
+                 {
+                  var loan=prompt("Enter amount to borrow from the bank");
+                  var rate=(6/100)*loan;
+                  var pay=rate*12;
+                  var fullpayment=parseInt(pay)+parseInt(loan);
+                 document.getElementById("bank").innerHTML="Customer name"+"  "+name+"<br>"+"Amount you borrowed from the bank"+
+                 "  "+"Kshs"+loan+"<br>"+"Rate of loan payment monthly is 6%"+"<br>"+"Rate payment for one Month:"+"  "+"Kshs."+rate+
+                 "<br>"+"Full payment after period of one year:"+"  "+"Kshs."+fullpayment;
+                
+                 }
+                 else
+                 {
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"You have selected invalid choice";
+                 }
+                }            
+                else if(account==12342)
+                  {
+                    name="ANTONY KIPKORIR";
+                   amount=10000;
+                    if(choice==1)
+                    {
+                   var deposit=prompt("Enter amount to deposit");
+                   var total=parseInt(amount)+parseInt(deposit);
+                   document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+
+                   "  "+"Kshs"+amount+"<br>"+
+                   " Amount you deposited"+
+                  "  "+"Kshs."+deposit+ "<br>"+"Total after deposit:"+"  "+"Kshs."+total;
+                    }
+                   else if(choice==2)
+                 {
+                   amount=10000;
+                    var withdraw=prompt("Enter amount to withdraw");
+                    var total=parseInt(amount)-parseInt(withdraw);
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+"  "+"Kshs."+amount+"<br>"+"Amount you withdrawn"+
+                   "  "+"Kshs."+withdraw+"<br>"+"Remaining after withdrawal"+"  "+"Kshs."+total;
+
+                 }
+                 else if(choice==3)
+                 {
+                   amount=10000;
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Your current balance is:"+"  "+"Kshs."+amount;
+                 }
+                 else
+                 {
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"You have selected invalid choice";
+                 }
+                }
+             else if(account==12343)
+             {  name="ELDAD  KEMBOI";
+                 amount=10000;
+                    if(choice==1)
+                    {
+                   var deposit=prompt("Enter amount to deposit");
+                   var total=parseInt(amount)+parseInt(deposit);
+                   document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+
+                   "  "+"Kshs."+amount+"<br>"+
+                   " Amount you deposited"+
+                  "  "+"Kshs."+deposit+ "<br>"+"Total after deposit:"+"  "+"Kshs."+total;
+                    }
+                   else if(choice==2)
+                 {
+                     var withdraw=prompt("Enter amount to withdraw");
+                    var total=parseInt(amount)-parseInt(withdraw);
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+"  "+"Kshs."+amount+"<br>"+"Amount you withdrawn"+
+                   "  "+"Kshs."+withdraw+"<br>"+"Remaining after withdrawal"+"  "+"Kshs."+total;
+
+                 }
+                 else if(choice==3)
+                 {
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Your current balance is:"+"  "+"Kshs."+amount;
+                 }
+                 else
+                 {
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"You have selected invalid choice";
+                 }
+                }
+             else if(account==12344)
+             {
+                name="NELLY  SIMON";
+                amount=10000;
+                    if(choice==1)
+                    {
+                   var deposit=prompt("Enter amount to deposit");
+                   var total=parseInt(amount)+parseInt(deposit);
+                   document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+
+                   "  "+"Kshs."+amount+"<br>"+
+                   " "+"Amount you deposited"+
+                  "  "+"Kshs."+deposit+ "<br>"+"Total after deposit:"+"  "+"Kshs."+total;
+                    }
+                   else if(choice==2)
+                 {
+                    var withdraw=prompt("Enter amount to withdraw");
+                    var total=parseInt(amount)-parseInt(withdraw);
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+"  "+"Kshs."+amount+"<br>"+"Amount you withdrawn"+
+                   "  "+"Kshs."+withdraw+"<br>"+"Remaining after withdrawal"+"  "+"Kshs."+total;
+
+                 }
+                 else if(choice==3)
+                 {
+                     document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Your current balance is:"+"  "+"Kshs."+amount;
+                 }
+                 else
+                 {
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"You have selected invalid choice";
+                 }
+                }
+                 else if(account==12345) 
+                 {      
+                  name="LONEX KIPLANG'AT";
+                amount=10000;
+                    if(choice==1)
+                    {
+                   var deposit=prompt("Enter amount to deposit");
+                   var total=parseInt(amount)+parseInt(deposit);
+                   document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+
+                   "  "+"Kshs."+amount+"<br>"+
+                   " Amount you deposited"+
+                  "  "+"Kshs."+deposit+ "<br>"+"Total after deposit:"+"  "+"Kshs."+total;
+                    }
+                   else if(choice==2)
+                 {
+                    var withdraw=prompt("Enter amount to withdraw");
+                    var total=parseInt(amount)-parseInt(withdraw);
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+"  "+"Kshs."+amount+"<br>"+"Amount you withdrawn"+
+                   "  "+"Kshs."+withdraw+"<br>"+"Remaining after withdrawal"+"  "+"Kshs."+total;
+
+                 }
+                 else if(choice==3)
+                 {
+                     document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Your current balance is:"+"  "+"Kshs."+amount;
+                 }
+                 else
+                 {
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"You have selected invalid choice";
+                 } 
+                }
+                 else if(account==12346)
+                  {
+                  name="DENNIS MUINDE";
+                amount=10000;
+                    if(choice==1)
+                    {
+                   var deposit=prompt("Enter amount to deposit");
+                   var total=parseInt(amount)+parseInt(deposit);
+                   document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+
+                   "  "+"Kshs."+amount+"<br>"+
+                   " Amount you deposited"+
+                  "  "+"Kshs."+deposit+ "<br>"+"Total after deposit:"+"  "+"Kshs."+total;
+                     }
+                     else if(choice==2)
+                   {
+                    var withdraw=prompt("Enter amount to withdraw");
+                    if(withdraw<=10000)
+                    {
+                    var total=parseInt(amount)-parseInt(withdraw);
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Inital amount in Bank:"+"  "+"Kshs"+amount+"<br>"+"Amount you withdrawn"+
+                   "  "+"Kshs."+withdraw+"<br>"+"Remaining after withdrawal"+"  "+"Kshs."+total;
+                    }
+                    else
+                    {
+                      document.getElementById("bank").innerHTML="Dear Customer name:"+"  "+name+"<br>"+"Insufficient amount in your account to Withdraw";
+                    }
+
+                  }
+                 else if(choice==3)
+                 {
+                     document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"Your current balance is:"+"  "+"Kshs."+amount;
+                 }
+                 else
+                 {
+                    document.getElementById("bank").innerHTML="Customer name:"+"  "+name+"<br>"+"You have selected invalid choice";
+                }
+                  } 
+              else
+              {
+                document.getElementById("bank").innerHTML="You have Entered wrong Bank account Number";
+              }            
+             } 
+         </script>
+            <body>
+ </html>
